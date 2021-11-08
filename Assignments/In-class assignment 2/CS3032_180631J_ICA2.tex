@@ -1,0 +1,93 @@
+\documentclass[a4paper,11pt]{article}
+
+\input{settings/packages}
+\input{settings/page}
+\input{settings/macros}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\begin{document}
+	
+	
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+text width=8em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+minimum height=4em]
+	
+	Thalagala B.P. 180631J
+\begin{center}	
+{	\Large\textbf{In-class assignment 2 : Back-off Algorithm}}\\[2mm]	
+
+\textbf{November 3, 2021}
+\end{center}
+
+%4.2.3.2.4 Collision detection and enforcement (half duplex mode only)
+% page 136
+
+%In full duplex mode, there is never contention for a shared physical medium. The Physical Layer may
+%indicate to the MAC that there are simultaneous transmissions by both stations, but since these transmissions
+%do not interfere with each other, a MAC operating in full duplex mode must not react to such Physical Layer
+%indications. Full duplex stations do not defer to received traffic, nor abort transmission, jam, backoff, and
+%reschedule transmissions as part of Transmit Media Access Management. Transmissions may be initiated
+%whenever the station has a packet queued, subject only to the interpacket gap required to allow recovery for
+%other sublayers and for the physical medium
+
+In half duplex mode, a collision occurs when two stations try to transmit packets simultaneously. When a collision is detected, instead of terminating the transmission immediately, transmitter continues to send a set of additional bits called as \textit{collision enforcement bits} or \textit{jam bits} of length{\tt jamSize}. This ensures that the collision is detected by all the transmitting stations on the network. When a transmission attempt has been terminated due to a collision, transmitter retries until either it is successful or a maximum number of attempts({\tt attemptLimit = 16}) have been made and all have terminated due to collisions.\\ 
+
+These retransmissions are scheduled by a randomization process called \textit{truncated binary exponential backoff}. The delay, before attempting a retransmission is an integer multiple of time taken to emits 512 bits, called as slot time({\tt slotTime}). The number of slot times to delay before the $n^{th}$ retransmission attempt is chosen as a uniformly distributed random integer $r$ in the range $0\leq r < 2^k$ where $k = min(n, 10)$. After 16 re-tries({\tt attemptLimit}) this event is reported as an error to the higher layers and interface gives-up the transmission.\\
+
+{\small Note: In the below diagram Transmission is abbreviated as TX; ``Deferring On?'' decision block delays the packet for Inter Frame Gap(IFG) once MAC identifies the channel is idle and available for a transmission.}
+\vfill
+
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 2.4cm, auto]
+	% Place nodes
+	\node [block] (init) {Packet Ready};
+	\node [decision, below of=init] (dec1) {Deferring On?};
+	\node [block, below of=dec1] (process1) {Start Transmission};
+	\node [decision, below of=process1] (dec2) {Collision Detected?};
+	\node [decision, below of=dec2] (dec3) {TX Done?};
+	\node [cloud, below of=dec3] (end1) {TX Successful};
+	
+	\node [block, right of= dec1, xshift=6cm, yshift=-1cm] (process2) {Send Jamming Signal of {\tt jamSize}};
+	\node [block, below of=process2] (process3) {Increment attempts};	
+	\node [decision, below of=process3] (dec4) {Attempts $>$ 16};
+	\node [cloud, left of=dec4] (end2) {Error};
+	\path [line] (dec4) -- node  {Yes} (end2);
+	
+	\node [block, below of=dec4] (process4) {Compute Backoff {\tt slotTime*r}};	
+	\node [block, below of=process4] (process5) {Wait for backoff time};	
+		
+	% Draw edges
+	\path [line] (init) -- (dec1);
+	\path [line] (dec1) -- node  {No} (process1);
+	%\path [line] (dec1) -- +(-2,0)  -- +(-2,1.8) --+(0,1.8) ;
+	\path [line] (dec1) -- +(-2,0) |- node[near start] {Yes} (0,-1.2) ;
+	
+	\path [line] (process1) -- (dec2);
+	\path [line] (dec2) -- node  {No} (dec3);
+	\path [line] (dec3) -- node  {Yes} (end1);
+	\path [line] (dec3) -- +(-2,0) |- node[near start] {No} (dec2) ;
+	\path [line] (process2) -- (process3);
+	\path [line] (process3) -- (dec4);
+	\path [line] (dec4) -- node  {No} (process4);
+	\path [line] (process4) -- (process5);
+	
+	
+	\draw [line] (dec2) -- +(4,0) |- node[near start] {yes} (process2);	
+	\draw [line](process5) -- +(0,-1.5) -- +(3,-1.5) |- (0,-1.2);
+	
+\end{tikzpicture}
+\caption{Block-level circuit diagram of Backoff algorithm}
+\end{figure}
+
+{\scriptsize \textbf{References}: Ieee standard for ethernet. \textit{IEEE Std 802.3-2018 (Revision of IEEE Std 802.3-2015)}; Minimizing Mobiles Communication Time Using Modified Binary Exponential Backoff Algorithm: http://dx.doi.org/10.5121/ijcnc.2013.5605  }
+
+
+\end{document}

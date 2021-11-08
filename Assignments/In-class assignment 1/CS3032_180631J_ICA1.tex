@@ -1,0 +1,55 @@
+\documentclass[a4paper,11pt]{article}
+
+\input{settings/packages}
+\input{settings/page}
+\input{settings/macros}
+\usepackage{subfigure}
+
+\begin{document}
+	Thalagala B.P. 180631J
+\begin{center}	
+{	\Large\textbf{In-class assignment 1}}\\[2mm]	
+
+\textbf{October 27, 2021}
+\end{center}
+
+\subsection*{1. ARQ protocol to improve the reliability of data transmission}
+Error control is one of the main functions in the Datalink layer in OSI model which improves the reliability of data transmission. It consists of Error detection and Error correction schemes. Error correction can be further classified in to two categories as \textit{Forward Error Correction} and \textit{Feedback Error Control}. Go-back-N and Selective re-transmission ARQs(Automatic repeat requests) come under the Feedback Error Control scheme. 
+
+\begin{figure}[!h]
+	\centering
+	\subfigure[Go-back-N]
+	{ \includegraphics[scale=0.27]{figures/gbn}
+	}\hfill
+	\subfigure[Selective re-transmission]
+	{ \includegraphics[scale=0.27]{figures/srj}
+	}
+\end{figure}
+
+\paragraph{Go-back-N ARQ} If the received frame has no error, receiver will send the positive acknowledgment(ACK) to the transmitter specifying the next frame it expects. If the received frame is error-ed, receiver will discard all the upcoming frames and send a negative acknowledgment(NAK) specifying the error-ed frame. Then the transmitter re-transmits the error-ed frame and all the following frames it had sent. 
+
+\paragraph{Selective re-transmission ARQ} In this scheme only the rejected frame will be re-transmitted and receiver accepts the subsequent frames into a buffer without discarding them. This minimizes the number of re-transmissions. However, to keep the subsequent frames receiver has to maintain a sufficient buffer.  
+
+\vfill
+\subsection*{2. Expected differences of ARQ protocol between datalink layer and transport layer implementations}
+
+\begin{enumerate}
+	
+	
+	\item Datalink layer's ARQ protocol ensures only the node-to-node(single link - across a wire) error free delivery. Whereas, Transport layer's ARQ protocol ensures the end-to-end delivery of an entire message from source to destination.
+	
+	\item Implementation differences occur due to the difference between Protocol Data Units (PDUs) of each layer.  Transport Layer's PDU, `\textbf{\textit{segment}}' is much larger than the Datalink Layer's PDU, `\textbf{\textit{frame}}' due to this reason the following differences can be identified.
+	
+	\begin{enumerate}[~I.]
+		\item If an error occurs, re-transmission is efficient with smaller frames (L2 PDU) than larger segments(L4 PDU).
+		\item Required buffer size is limited when dealing with frames whereas, larger buffers are required if Selective re-transmission ARQ is implemented in Transport Layer. 
+		\item Error detection is efficient with the smaller frames.
+		\item Smaller frames prevent, one station occupying the medium for long time. Which then increases the bandwidth utilization.
+	\end{enumerate}
+	 
+
+	
+\end{enumerate}
+
+
+\end{document}
