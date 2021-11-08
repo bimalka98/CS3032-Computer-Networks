@@ -1,1 +1,1 @@
-# CS3032-Computer-Networks
+# Strictly for educational purposes only
