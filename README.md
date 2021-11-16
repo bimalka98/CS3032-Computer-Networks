@@ -5,6 +5,32 @@
 
 # Most frequently used commands
 
+### Modes of operation
+
+
+```
+
+// =============================User Execution Mode============================
+Router>
+router> ? --> show all the possible commands
+
+// ===============================Privilege Mode===============================
+Router>
+Router> enable
+Router#
+Router# ? --> show all the possible privileges
+
+// =========================Global Configuration Mode==========================
+Router>
+Router> enable
+Router#
+Router# configure terminal
+Router(config)#
+Router(config)# ? --> show all the possible configurations
+
+```
+
+
 ### Console into the router and enable privileged EXEC mode.
 ```
 Make a connection between a PC and the Router using console cable.
