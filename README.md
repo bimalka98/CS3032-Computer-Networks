@@ -207,6 +207,15 @@ R1(config)#interface gigabitEthernet 0/1
 R1(config-if)#description LAN-B
 R1(config-if)#
 ```
+
+### set the clock rate on the first serial interface to 64,000 bps:
+
+```
+Router(config)# interface serial 0
+Router(config-if)# clock rate 64000
+```
+
+
 ### Save the running configuration to the startup configuration file.
 ```
 R1#copy running-config startup-config 
