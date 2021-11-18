@@ -244,5 +244,3 @@ Minimum = 0ms, Maximum = 107ms, Average = 26ms
 
 C:\>
 ```
-
-
