@@ -63,3 +63,5 @@ R1# show ip route
 Gateway of last resort is 10.1.1.2 to network 0.0.0.0
 R* 0.0.0.0/0 [120/1] via 10.1.1.2, 00:00:13, Serial0/0/0
 ```
+
+![](route.png)
