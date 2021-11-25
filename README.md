@@ -225,6 +225,12 @@ Building configuration...
 R1#
 ```
 
+### Restart the router
+```
+R1#copy running-config startup-config 
+R1#reload
+```
+
 ### Ping PC-B from a command prompt window on PC-A.
 ```
 Packet Tracer PC Command Line 1.0
