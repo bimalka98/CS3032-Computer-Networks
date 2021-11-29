@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.9)  29 NOV 2021 19:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.9)  29 NOV 2021 20:31
 entering extended mode
 **./CS3032_180631J_ICA3.tex
 (CS3032_180631J_ICA3.tex
@@ -927,30 +927,34 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 (C:\Users\bimal\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Video
+ []
+
 [1
 
 
-{C:/Users/bimal/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
+{C:/Users/bimal/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
 (CS3032_180631J_ICA3.aux)
 Package rerunfilecheck Info: File `CS3032_180631J_ICA3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23178 strings out of 479321
- 445955 string characters out of 2856584
- 766218 words of memory out of 3000000
+ 23179 strings out of 479321
+ 445961 string characters out of 2856584
+ 778218 words of memory out of 3000000
  40194 multiletter control sequences out of 15000+600000
  408991 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,8n,88p,734b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,8n,88p,809b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi10.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX/font
 s/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on CS3032_180631J_ICA3.pdf (2 pages, 62000 bytes).
+Output written on CS3032_180631J_ICA3.pdf (3 pages, 64612 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
+ 39 PDF objects out of 1000 (max. 8388607)
+ 5 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

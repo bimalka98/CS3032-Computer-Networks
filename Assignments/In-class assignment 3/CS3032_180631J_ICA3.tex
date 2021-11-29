@@ -14,7 +14,7 @@
 
 	Thalagala B.P. 180631J
 \begin{center}
-{	\Large\textbf{In-class assignment 3 : QoS for applications}}\\[2mm]
+{	\Large\textbf{In-class assignment 3 : QoS for Applications}}\\[2mm]
 
 \textbf{November 29, 2021}
 \end{center}
@@ -31,15 +31,25 @@
 	
 	Web &high	& $<$2s & don't care & medium & Purpose of a web page is to provide information to public, therefore the reliability should be high. Otherwise loss of characters and etc. due to errors in packets can corrupt the original information. As the humans interact with web in real time, the delay it takes to build a given web page should be limited. Jitter is not a problem as long as the requested web page is built after receiving all the required data packets. Web pages may contains embedded images and videos which require sufficient amount of bandwidth in order to load the page within the specified amount of time.\\\hline
 	&&&&&\\
-
+\pagebreak
+	\textbf{Application}& \textbf{Reliability} & \textbf{Delay}& \textbf{Jitter} &\textbf{Bandwidth} & \textbf{Explanation} \\\hline
+	&&&&&\\
 	Remote Login& high	& $<$2s & not critical & low & 
 	Remote login involves  processes  related to security such as user authentication. Therefore reliability of the service must be high in order to transmit the exact information and commands. Since user interaction in real time is present in remote login the delay of service must be  maintained within some specified time. Bandwidth requirement is low as all we have to transmit is some commands through a Command Line Interface. \\\hline
 	&&&&&\\
 	
-	Audio Streaming & low 	& not critical 	& significant & medium & Since target audience is humans even though there is some error in a given conversation/sentence, it will not be a big problem as humans can guess the missing word or phrase depending on the context of the conversation. However, even for that to happen there should be some minimum acceptable reliability in the service. Affect of jitter is significant as the data packets should receive in a proper sequence for smooth user experience.\\
-	Video Streaming	& low	& not critical 	& significant & low & \\
-	Telephony	& low   & $<$0.2s & critical & low & \\
-	Video Conf	& low  & $<$0.2s & critical & high & \\
+	Audio Streaming & low 	& not critical 	& significant & medium & Since target audience is humans even though there is some error in a given conversation/sentence, it will not be a big problem as humans can guess the missing word or phrase depending on the context of the conversation. However, even for that to happen there should be some minimum acceptable reliability in the service. Affect of jitter is significant as the data packets should receive in a proper sequence in order to interpret the received data meaningfully for a smooth user experience. However, affect of jitter is not critical as buffers can be used in receiving end to construct the stream before playing.  Some bandwidth is required for audio streaming as it may contains voice and music type data.\\\hline
+	&&&&&\\
+	
+	Video Streaming	& low	& not critical 	& significant & high & Explanation given for the Audio streaming applies here as well. But video Streaming requires much higher bandwidth rather than audio streaming as it contains both audio and video data. \\\hline
+	&&&&&\\
+	
+	Telephony	& low   & $<$0.2s & critical & low & Telephony involves real time voice communication between two parties. Reliability of the required service is low as one party can always disturb the other party by asking for any missing information. Affect of jitter is critical, as the incoming data must be interpreted continuously in the proper sequence to get any meaningful information. Required bandwidth is low as telephony involves only voice data.\\\hline
+	&&&&&\\
+	\pagebreak
+	\textbf{Application}& \textbf{Reliability} & \textbf{Delay}& \textbf{Jitter} &\textbf{Bandwidth} & \textbf{Explanation} \\\hline
+	&&&&&\\
+	Video Conferencing	& low  & $<$0.2s & critical & high & Video Conferencing involves real time voice and video communication between two parties. Reliability of the required service is low as one party can always disturb the other party by asking for any missing information. Affect of jitter is critical, as the incoming data must be interpreted continuously in the proper sequence to get any meaningful information and to maintain the synchronization between audio and video. Video Conferencing requires much higher bandwidth rather than telephony as it contains both audio and video data.\\
 
 	\end{longtable}
 %\end{table}
