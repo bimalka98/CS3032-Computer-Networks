@@ -1,0 +1,40 @@
+\documentclass[a4paper,11pt]{article}
+
+\input{settings/packages}
+\input{settings/page}
+\input{settings/macros}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{pdflscape}
+
+\begin{document}
+\begin{landscape}
+
+	Thalagala B.P. 180631J
+\begin{center}
+{	\Large\textbf{In-class assignment 3 : QoS for applications}}\\[2mm]
+
+\textbf{November 29, 2021}
+\end{center}
+
+\begin{table}[!h]
+	\begin{tabular}{p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.4\linewidth} } 
+	\textbf{Application}& \textbf{Reliability} & \textbf{Delay}& \textbf{Jitter} &\textbf{Bandwidth} & \textbf{Explanation} \\\hline
+	&&&&&\\
+	Email 	& high 		& not critical 	& don't care & low	&Receiving party must receive the  exact email sent by the transmitting party without any loss of the content. Therefore, the reliability should be high. However, since the emails are transmitted using the store and forward mechanism delay in transmission is not critical. As the email is constructed after receiving all the required data packets, delay in between packets in not a problem. \\\hline
+	&&&&&\\
+	
+	File Transfer& high & not critical 	& don't care & medium	& \\
+	Web &high	& $<$2s & don't care & medium & \\
+	Remote Login& high	& $<$2s & not critical & low & \\
+	Audio Streaming & low 	& not critical 	& significant & medium & \\
+	Video Streaming	& low	& not critical 	& significant & low & \\
+	Telephony	& low   & $<$0.2s & critical & low & \\
+	Video Conf	& low  & $<$0.2s & critical & high & \\
+
+	\end{tabular}
+\end{table}
+
+\end{landscape}
+\end{document}
