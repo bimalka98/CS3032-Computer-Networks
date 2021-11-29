@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
 \usepackage{pdflscape}
+\usepackage{longtable}
 
 \begin{document}
 \begin{landscape}
@@ -18,23 +19,30 @@
 \textbf{November 29, 2021}
 \end{center}
 
-\begin{table}[!h]
-	\begin{tabular}{p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.4\linewidth} } 
+%\begin{table}[!h]
+	\begin{longtable}{p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.4\linewidth} } 
 	\textbf{Application}& \textbf{Reliability} & \textbf{Delay}& \textbf{Jitter} &\textbf{Bandwidth} & \textbf{Explanation} \\\hline
 	&&&&&\\
-	Email 	& high 		& not critical 	& don't care & low	&Receiving party must receive the  exact email sent by the transmitting party without any loss of the content. Therefore, the reliability should be high. However, since the emails are transmitted using the store and forward mechanism delay in transmission is not critical. As the email is constructed after receiving all the required data packets, delay in between packets in not a problem. \\\hline
+	Email 	& high 		& not critical 	& don't care & low	& Receiving party must receive the  exact email sent by the transmitting party without any loss of the content. Therefore, the reliability should be high. However, since the emails are transmitted using the store and forward mechanism delay in transmission is not critical. As the email is constructed after receiving all the required data packets, delay in between packets in not a problem. since the emails are restricted to several MBs the required bandwidth is quite low.\\\hline
 	&&&&&\\
 	
-	File Transfer& high & not critical 	& don't care & medium	& \\
-	Web &high	& $<$2s & don't care & medium & \\
-	Remote Login& high	& $<$2s & not critical & low & \\
-	Audio Streaming & low 	& not critical 	& significant & medium & \\
+	File Transfer& high & not critical 	& don't care & medium	& Receiving party must receive the  exact files sent by the transmitting party without any loss of the content. Therefore, the reliability should be high. Delay in transmission is not critical as it does not affect the quality of the received file. As the files are constructed after receiving all the required data packets, delay in between packets is not a problem. Since, files can have varying sizes, sufficient bandwidth is required to provide the service within a reasonable amount of time. If the bandwidth is very low transmission may take very long time which is can not be tolerated.\\\hline
+	&&&&&\\
+	
+	Web &high	& $<$2s & don't care & medium & Purpose of a web page is to provide information to public, therefore the reliability should be high. Otherwise loss of characters and etc. due to errors in packets can corrupt the original information. As the humans interact with web in real time, the delay it takes to build a given web page should be limited. Jitter is not a problem as long as the requested web page is built after receiving all the required data packets. Web pages may contains embedded images and videos which require sufficient amount of bandwidth in order to load the page within the specified amount of time.\\\hline
+	&&&&&\\
+
+	Remote Login& high	& $<$2s & not critical & low & 
+	Remote login involves  processes  related to security such as user authentication. Therefore reliability of the service must be high in order to transmit the exact information and commands. Since user interaction in real time is present in remote login the delay of service must be  maintained within some specified time. Bandwidth requirement is low as all we have to transmit is some commands through a Command Line Interface. \\\hline
+	&&&&&\\
+	
+	Audio Streaming & low 	& not critical 	& significant & medium & Since target audience is humans even though there is some error in a given conversation/sentence, it will not be a big problem as humans can guess the missing word or phrase depending on the context of the conversation. However, even for that to happen there should be some minimum acceptable reliability in the service. Affect of jitter is significant as the data packets should receive in a proper sequence for smooth user experience.\\
 	Video Streaming	& low	& not critical 	& significant & low & \\
 	Telephony	& low   & $<$0.2s & critical & low & \\
 	Video Conf	& low  & $<$0.2s & critical & high & \\
 
-	\end{tabular}
-\end{table}
+	\end{longtable}
+%\end{table}
 
 \end{landscape}
 \end{document}
