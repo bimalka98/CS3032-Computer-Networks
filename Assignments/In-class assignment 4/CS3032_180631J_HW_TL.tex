@@ -3,10 +3,7 @@
 \input{settings/packages}
 \input{settings/page}
 \input{settings/macros}
-
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-
+\usepackage{float}
 \begin{document}
 
 	Thalagala B.P. 180631J
@@ -15,9 +12,9 @@
 
 \textbf{December 15, 2021}
 \end{center}
-
-
-
+\vspace{5mm}
+\hrule
+\vspace{5mm}
 \subsection*{1. Why are transport layer services called end-to-end?}
 
 Transport layer provides a reliable logical connection between two application processes run in two end stations which is achieved through the  protocols implemented inside the Operating Systems. These protocols make sure that the data communication between two application processes reside in two end stations happens in such a way that the relationship among data packets of a given application instance is preserved even though all the applications use a common network interface to send data packets. Port number is used to distinguish different processes of a given host.
@@ -50,7 +47,7 @@ Connectionless	& Not reliable &
 
 Because a given source out of $2^{32}\times2^{16}$ sources can have $2^{32}\times2^{16}$ destinations.
 
-
+\pagebreak
 \subsection*{6. What are the transport layer primitives? How are they related with connection-less service?}
 \subsubsection*{TPL Primitives}
 \begin{itemize}
@@ -66,7 +63,16 @@ In connection-less services there is no need of establishing a connection prior 
 
 \subsection*{7. How is a connection established before starting a communication? It may not happen at once. What are the possible issues that can exist? How is it solved?}
 
+To establish a connection, client first sends a connection request and server should accept that connection request. This connection establishment process also known as 3-way Handshaking as it makes use of following three segments
+\begin{enumerate}
+	\item {\tt SYN}: (Synchronization) segment sends by sender to initialize connection which includes some random number which will be used by sender to start numbering segments.
+	\item {\tt SYN + ACK}: (Acknowledgment and Synchronization)  sends by receiver to inform the sender that it receives connection request(first SYN) and the random number that the receiver will be using to start numbering its segments.
+	\item {\tt ACK}: (Acknowledgment) sends by the sender again to acknowledge the receivers connection request as the TCP connections are full duplex.
+\end{enumerate}
 
+This will happen at once only if the network is reliable. However network may not reliable sometimes and packets may get delayed, lost or duplicated.\\
+
+In order to overcome those issues, sequence number is associated with each Protocol Data Unit(PDU-Segment) of the transport layer. These sequence numbers are assigned by both the parties for their segments respectively starting from some random integer specified when sending the synchronization segments.
 
 \subsection*{8. Draw diagrams for following scenarios (you may use a diagramming tool and include an image in the document, or you may draw on a piece of paper, take a photo and include it in the document)}
 
@@ -78,6 +84,12 @@ In connection-less services there is no need of establishing a connection prior 
 \item Duplicate CONNECTION REQUEST  and duplicate ACK
 \end{itemize}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.14]{figures/img100}
+	\caption{\textbf{Connection establishment}: Normal case of a three-way handshake, Old CONNECTION REQUEST appearing out of nowhere and Duplicate CONNECTION REQUEST  and duplicate ACK}
+\end{figure}
+
 \subsubsection*{8.2. Connection Release}
 
 \begin{itemize}
@@ -86,6 +98,18 @@ In connection-less services there is no need of establishing a connection prior 
 \item Response lost
 \item Response lost and subsequent DRs lost
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.14]{figures/img101}
+	\caption{\textbf{Connection Release}: Normal case of a three-way handshake and Final ACK lost}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.14]{figures/img102}
+	\caption{\textbf{Connection Release}: Response lost and Response lost and subsequent DRs lost}
+\end{figure}
 
 \subsection*{9. What is the objective of having flow control mechanism?}
 
