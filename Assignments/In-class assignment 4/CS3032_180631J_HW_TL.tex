@@ -17,26 +17,55 @@
 \end{center}
 
 
+
 \subsection*{1. Why are transport layer services called end-to-end?}
 
-Transport layer provides a point-to-point reliable connection between two end stations. 
+Transport layer provides a reliable logical connection between two application processes run in two end stations which is achieved through the  protocols implemented inside the Operating Systems. These protocols make sure that the data communication between two application processes reside in two end stations happens in such a way that the relationship among data packets of a given application instance is preserved even though all the applications use a common network interface to send data packets. Port number is used to distinguish different processes of a given host.
 
 \subsection*{2. How do transport layer services differ from network layer services?}
 
+Network layer provides host-to-host reliable communication. Regardless of the processes which packets belong, network layer ensures that each packet reaches from its point of origin to its final destination. This is achieved thorough the protocols implemented inside the networking devices such as routers and switches. Network layer uses IP addresses of the source and destination to deliver packets to the desired station.
+% https://www.baeldung.com/cs/osi-transport-vs-networking-layer
 
 \subsection*{3. In what way are transport layer services similar with data link layer services?}
 
+Transport Layer(TPL) and Data Link Layer(DLL) both provides similar types of services such as Error control, Flow control and Connection establishments. However, most of the properties of the DLL services are predefined(fixed) and there is no flexibility as it provides node-to-node data transmission inside a single link. Whereas the services of TPL can be  provided with much flexibility through negotiations done between end hosts as the TPL is implemented inside the Operating Systems of end stations. Therefore, the TPL services are much more sophisticated than the DLL services even though are similar.
 
 \subsection*{4. What are the types of transport services?}
+\begin{tabular}{l |l| l}
+Connection-oriented &Reliable & Multicast\\
+Connectionless	& Not reliable &
+\end{tabular}
 
 
 \subsection*{5. What is the theoretical maximum number of Internet connection?    Note: IPv4 address and a port together represent the transport address}
 
+\begin{tabular}{l l}
+	Number of bits in an IPv4 address &= 32\\
+	Number of bits in port number &= 16\\
+	$\therefore$ Number of sources/destinations & = $2^{32}\times2^{16}$\\
+	$\therefore$ Number of Internet connections & = $(2^{32}\times2^{16}) \times (2^{32}\times2^{16}) = 2^{96}$
+\end{tabular}\\[2mm]
+
+
+Because a given source out of $2^{32}\times2^{16}$ sources can have $2^{32}\times2^{16}$ destinations.
+
 
 \subsection*{6. What are the transport layer primitives? How are they related with connection-less service?}
+\subsubsection*{TPL Primitives}
+\begin{itemize}
+	\item \textbf{Listen} - Wait for an incoming connection
+	\item \textbf{Connect} - Establish a connection
+\item 	\textbf{Send} - Send data
+\item 	\textbf{Receive} - Wait for data to arrive
+\item	\textbf{Disconnect} - Release connection
+	
+\end{itemize}
 
+In connection-less services there is no need of establishing a connection prior to send data, as the routing happens on per-packet basis. Therefore from the above primitives, the primitives related to connection establishment({\textit{Connect}}) and connection release({\textit{Disconnect}})  are not required in connection-less service. Other primitives are required.
 
 \subsection*{7. How is a connection established before starting a communication? It may not happen at once. What are the possible issues that can exist? How is it solved?}
+
 
 
 \subsection*{8. Draw diagrams for following scenarios (you may use a diagramming tool and include an image in the document, or you may draw on a piece of paper, take a photo and include it in the document)}

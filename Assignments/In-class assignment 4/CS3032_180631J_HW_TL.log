@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.9)  15 DEC 2021 00:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.9)  15 DEC 2021 15:37
 entering extended mode
 **./CS3032_180631J_HW_TL.tex
 (CS3032_180631J_HW_TL.tex
@@ -883,15 +883,15 @@ Package gensymb Warning: Not defining \micro.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
-* v-part:(T,H,B)=(14.22636pt, 816.59412pt, 14.22636pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=512.14963pt
-* \textheight=816.59412pt
-* \oddsidemargin=-29.59087pt
-* \evensidemargin=-29.59087pt
-* \topmargin=-95.04362pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -909,29 +909,48 @@ Package gensymb Warning: Not defining \micro.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+
+(C:\Users\bimal\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+
+
+(C:\Users\bimal\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 43--49
+
+ []
+
 [1
 
-{C:/Users/bimal/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/bimal/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
 (CS3032_180631J_HW_TL.aux)
 Package rerunfilecheck Info: File `CS3032_180631J_HW_TL.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23114 strings out of 479321
- 444669 string characters out of 2856584
- 746602 words of memory out of 3000000
- 40144 multiletter control sequences out of 15000+600000
- 405589 words of font info for 34 fonts, out of 8000000 for 9000
+ 23161 strings out of 479321
+ 445404 string characters out of 2856584
+ 748601 words of memory out of 3000000
+ 40170 multiletter control sequences out of 15000+600000
+ 410283 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,5n,88p,452b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,8n,88p,638b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\bimal\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb>
-Output written on CS3032_180631J_HW_TL.pdf (1 page, 55450 bytes).
+ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/bimal/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/bimal/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/bimal/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on CS3032_180631J_HW_TL.pdf (2 pages, 96937 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
+ 67 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
