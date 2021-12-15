@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.9)  15 DEC 2021 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.9)  15 DEC 2021 21:04
 entering extended mode
 **./CS3032_180631J_HW_TL.tex
 (CS3032_180631J_HW_TL.tex
@@ -564,14 +564,8 @@ Overfull \hbox (3.42638pt too wide) in paragraph at lines 89--90
  [][] 
  []
 
-
-Underfull \hbox (badness 2726) in paragraph at lines 90--90
-\OT1/cmr/m/n/10.95 CON-NEC-TION RE-QUEST ap-pear-ing out of nowhere and Du-pli-
-cate CON-NEC-TION
- []
-
 [2]
-<figures/img101.jpg, id=35, 3276.24pt x 1523.6925pt>
+<figures/img101.jpg, id=36, 3276.24pt x 1523.6925pt>
 File: figures/img101.jpg Graphic file (type jpg)
 <use figures/img101.jpg>
 Package pdftex.def Info: figures/img101.jpg  used on input line 104.
@@ -581,7 +575,7 @@ Overfull \hbox (3.42638pt too wide) in paragraph at lines 104--105
  [][] 
  []
 
-<figures/img102.jpg, id=36, 3276.24pt x 1559.8275pt>
+<figures/img102.jpg, id=37, 3276.24pt x 1559.8275pt>
 File: figures/img102.jpg Graphic file (type jpg)
 <use figures/img102.jpg>
 Package pdftex.def Info: figures/img102.jpg  used on input line 110.
@@ -601,12 +595,12 @@ l.113
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.113 
-       <./figures/img100.png (PNG copy)> <./figures/img101.jpg>] [4pdfTeX warni
-ng (ext4): destination with the same identifier (name{figure.3}) has been alrea
-dy used, duplicate ignored
+       <./figures/img100.png> <./figures/img101.jpg>] [4pdfTeX warning (ext4): 
+destination with the same identifier (name{figure.3}) has been already used, du
+plicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.118 \end{document}
+l.122 \end{document}
                      <./figures/img102.jpg>] (CS3032_180631J_HW_TL.aux)
 Package rerunfilecheck Info: File `CS3032_180631J_HW_TL.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -618,7 +612,7 @@ Here is how much of TeX's memory you used:
  28325 multiletter control sequences out of 15000+600000
  410451 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,8n,77p,638b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,8n,77p,638b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\bimal\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -630,9 +624,9 @@ ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/bimal/AppData/Local/Programs/MiKTeX
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/b
 imal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.p
 fb>
-Output written on CS3032_180631J_HW_TL.pdf (4 pages, 2282499 bytes).
+Output written on CS3032_180631J_HW_TL.pdf (4 pages, 1808074 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  24 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
